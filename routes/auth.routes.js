@@ -84,7 +84,7 @@ router.post('/login',
         { expiresIn: '12h' }
       )
 
-      res.json({ token, userId: user.id });
+      res.json({ token, userId: user.id, userRoles: user.roles });
     }
     catch (e) {
       res.status(500).json({ message: 'Что -то пошло не так, попробуйте позже.', errorMessage: e.message })
