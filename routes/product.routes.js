@@ -52,7 +52,7 @@ router.put('/:id/update', async (req, res) =>
         return res.status(500).json({ message: `Продукт не найден.` })
       }
 
-      const asd = await Product.findOneAndUpdate({ _id: req.params.id }, ...req.body)
+      const asd = await Product.findOneAndUpdate({ _id: req.params.id }, {...req.body})
 
       res.status(201).json({ message: 'Продукт успешно обновлен!' })
     }
